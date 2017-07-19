@@ -866,8 +866,26 @@
 		display: inline-block;
 		position: relative;
 		border: 0;
+		/* jst 20170719 change for growing images on mouseover */
+		overflow: hidden;
 	}
 
+	
+/* jst 20170719 growing images on mouseover */	
+.image img {
+				-moz-transition: -moz-transform 0.2s ease-out;
+				-webkit-transition: -webkit-transform 0.2s ease-out;
+				-ms-transition: -ms-transform 0.2s ease-out;
+				transition: transform 0.2s ease-out;
+				width: 100%;
+			}	
+.image:hover img {
+				-moz-transform: scale(1.05);
+				-webkit-transform: scale(1.05);
+				-ms-transform: scale(1.05);
+				transform: scale(1.05);
+			}	
+/* end */
 		.image.filtered:after {
 			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
 			background-size: 128px 128px, auto;
